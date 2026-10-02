@@ -1,0 +1,81 @@
+/* Banner y panel de cookies — incluir en todas las páginas de la web */
+.rc-banner, .rc-modal { font-family: "Concasse", "Helvetica Neue", Arial, sans-serif; color: #1d1d1b; }
+
+.rc-banner {
+  position: fixed;
+  left: 16px; right: 16px; bottom: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e2e0da;
+  box-shadow: 0 10px 40px rgba(0,0,0,.15);
+  padding: 22px 24px;
+  z-index: 9999;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.rc-banner h2 { font-size: 18px; font-weight: 600; margin: 0 0 6px; }
+.rc-banner p { margin: 0 0 16px; }
+.rc-banner a { color: inherit; text-underline-offset: 3px; }
+
+.rc-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.rc-btn {
+  flex: 1 1 150px;
+  font: inherit;
+  font-size: 15px;
+  padding: 11px 16px;
+  border: 1px solid #1d1d1b;
+  background: #fff;
+  color: #1d1d1b;
+  cursor: pointer;
+}
+.rc-btn:hover { background: #f6f5f1; }
+.rc-btn:focus-visible { outline: 2px solid #1d1d1b; outline-offset: 2px; }
+
+.rc-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.rc-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 26px 24px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.rc-modal h2 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+.rc-cat { border-top: 1px solid #e2e0da; padding: 14px 0; }
+.rc-cat-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.rc-cat-head strong { font-size: 16px; }
+.rc-cat p { margin: 6px 0 0; color: #5e5e5a; font-size: 14px; }
+.rc-always { font-size: 13px; color: #5e5e5a; white-space: nowrap; }
+
+.rc-switch { position: relative; width: 44px; height: 24px; flex: none; }
+.rc-switch input { opacity: 0; width: 0; height: 0; }
+.rc-slider {
+  position: absolute; inset: 0;
+  background: #cfcdc6; border-radius: 24px; cursor: pointer;
+  transition: background .2s;
+}
+.rc-slider::before {
+  content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px;
+  background: #fff; border-radius: 50%; transition: transform .2s;
+}
+.rc-switch input:checked + .rc-slider { background: #1d1d1b; }
+.rc-switch input:checked + .rc-slider::before { transform: translateX(20px); }
+.rc-switch input:focus-visible + .rc-slider { outline: 2px solid #1d1d1b; outline-offset: 2px; }
+
+.rc-modal .rc-actions { margin-top: 18px; }
+
+/* Aviso en lugar de mapas/vídeos bloqueados hasta que se acepten las cookies */
+.rc-placeholder {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: #f6f5f1; border: 1px dashed #cfcdc6; padding: 24px; font-size: 14px;
+  min-height: 160px;
+}
